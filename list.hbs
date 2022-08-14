@@ -1,0 +1,43 @@
+<html>
+    <head> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+    <section class="iota">
+       
+      <button  style="float: right;"><a href="https://orderpage12345.herokuapp.com/"> Orders Visualization</a></button>
+<h3><a class="btn btn-secondary" href="/admin"><i class="fa fa-plus"></i> View Order</a> Order Details</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Cargo Type</th>
+            <th>Dimension</th>
+            <th>No_of_container</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Warehouse Place</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Id}}</td>
+            <td>{{this.Name}}</td>
+            <td>{{this.CType}}</td>
+            <td>{{this.Dimension}}</td>
+            <td>{{this.No_of_container}}</td>
+            <td>{{this.Quantity}}</td>
+            <td>{{this.Price}}</td>
+            <td>{{this.WarePlace}}</td>
+            
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

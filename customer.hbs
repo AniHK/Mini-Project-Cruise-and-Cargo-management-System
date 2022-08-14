@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Patua+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Patua+One&family=Rampart+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form class="cust" action="/customer" method="post" id="myfrm">
+  <div class="mytabs">
+    <input type="radio" id="tabfree" name="mytabs" checked="checked">
+    <label for="tabfree" >Cargo</label>
+    <div class="tab">
+      <h2 style="font-size:4vh ;font-family: 'Roboto', sans-serif;">Add Cargo</h2>
+      <h3 style="font-weight: bold;">Sender Details:</h3>
+      <b style="font-size:2vh ;"> Sender Name:</b>
+       <input type="text" name="Sname" id="name"><br>
+       <b style="font-size:2vh ;">Type Of Goods:</b>
+       <select class="sa" name="Goods" id="goods" onchange="calculateAmt(this.value)" style="font-family: 'Patua One', cursive;">
+        <option value="1">--SELECT--</option>
+        <option value="2">Digital Goods</option>
+        <option value="3">Consumer Goods</option>
+        <option value="4">Virtual Goods</option>
+        <option value="5">Capital Goods</option>
+        <option value="6">Veblen Goods</option>
+        <option value="7">Commodities</option>
+        <option value="8">Unsought Goods</option>
+        <option value="9">Complementary Goods</option>
+       </select>
+       <input name="tot_amt" id="tot_amt" type="text" readonly><br>
+       <b style="font-size:2vh ;">Cargo Location:</b>
+       <select class="sa" name="Location" id="loc" onchange="calAmt(this.value)" style="font-family: 'Patua One', cursive;">
+        <option value="1">--SELECT--</option>
+        <option value="1">Chennai</option>
+        <option value="2">Coimbatore</option>
+        <option value="3">Goa</option>
+        <option value="4">Kochi</option>
+        <option value="5">Kandla</option>
+        <option value="6">Mangaluru</option>
+        <option value="7">Mumbai</option>
+        <option value="8">Port Blair</option>
+        <option value="9">Tuticorin</option>
+        <option value="10">Vishakapatnam</option>
+       </select>
+       <input name="to_amt" id="to_amt" type="text" readonly><br>
+       <b style="font-size:2vh ;"> Quantity:</b>
+       <input type="text" name="Quantity" id="quantity"><br><br>
+       <b style="font-size:2vh ;"> Sender Phone_no:</b>
+       <input type="text" name="SPhone" id="ph"><br><br>
+       <b style="font-size:2vh ;"> Sender Address:</b>
+      <textarea name="Saddress" id="add1" rows="3" cols="39" style="margin-left: 12px;"></textarea><br>
+       <h3>Receiver Details:</h3>
+      <b style="font-size:2vh ;"> Receiver Name:</b>
+       <input type="text" name="Rname" id="nam"><br>
+       <b style="font-size:2vh ;">Receiver Mobile:</b>
+       <input type="text" name="Rmobile" id="mob"><br>
+       <b style="font-size:2vh ;"> Receiver Email:</b>
+       <input type="text" name="Remail" id="email"><br><br>
+       <b style="font-size:2vh ;"> Receiver Address:</b>
+       <textarea name="Raddress" id="add2" rows="3" cols="39" style="margin-left: 12px;"></textarea><br><br>
+
+    <br><br>
+       
+       
+       <input type="submit" value="Book"  style="font-size:3vh ; color: black; font-family:'Patua One', cursive; margin-bottom: -50px;margin-top: 30px;">
+       <br><br><br><br><br>
+       
+<div class="container" id="div1">
+        <fieldset>
+            <legend>Your Bill</legend>
+            <h3>Sender Name:<span id="name1"></span></h3>
+           
+            <h3>Quantity: <span id="qty"></span></h3>
+            <h3>Sender Ph_no: <span id="sph"></span></h3>
+            <h3>Sender Address: <span id="add"></span></h3>
+            <h3>Receiver Name: <span id="name2"></span></h3>
+            <h3>Receiver Email: <span id="email1"></span></h3>
+            <h3>Receiver Address: <span id="addr"></span></h3>
+            <h3>Receiver Mobile: <span id="mob1"></span></h3>
+            <table border="1" >
+               
+              <!-- <tbody id="bill">
+                    <!-- <tr><td>Smosa</td><td>Rs. 10</td><td>1</td><td>10x1 = 10</td></tr> -->
+              <!--  </tbody> -->
+
+                
+
+            </table>
+            </fieldset>
+            <h1>Total Amount: Rs. <span id="amount">0</span></h1>
+             </div>      
+      <input type="button"  value="Print" onclick="printContent('div1')" style="font-size:3vh ; color: black; font-family:'Patua One', cursive; margin-left: 200px;" >
+      
+      </div>
+</form>
+  
+    <input type="radio" id="tabsi" name="mytabs">
+    <label for="tabsi"><a href="lucifer">Order Cargo</a></label>
+    <div class="tab">
+      <h2 style="font-size:4vh ;">Order Cargo</h2>
+      <b>Name:</b>
+       <input type="text" name="Nam"><br>
+       <b> ID:</b>
+       <input type="text" name="id"><br>
+       <b style="padding-top: 4vh;">Cargo Types:</b>
+       <select class="sa" name="CTyp">
+        <option>Dry Storage Container</option>
+        <option>Flat Rack Container</option>
+        <option>Open Top Container</option>
+        <option>Open Side Storage Container</option>
+        <option>Refrigerated ISO Container</option>
+        <option>ISO Tanks</option>
+        <option>Half Height Container</option>
+        <option>Special Purpose Container</option>
+        <option>Tuticorin</option>
+        <option>Vishakapatnam</option>
+        
+       </select></br>
+       <b style="padding-top: 4vh;">Dimensions:</b>
+       <select class="sa" name="Dimensio">
+        <option>10-Feet</option>
+        <option>20-Feet</option>
+        <option>40-Feet</option></select></br>
+        <b> No. of Containers:</b>
+       <input type="text" name="No_of_containe"></br>
+       <b> Quantity:</b>
+       <input type="text" name="Quantit" ><br>
+       <b> Price:</b>
+       <input type="text" name="Pric"><br>
+       <b style="padding-top: 4vh;">Warehouse Places</b>
+       <select class="sa" name="WarPlace">
+        <option>Chennai</option>
+        <option>Coimbatore</option>
+        <option>Goa</option>
+        <option>Kochi</option>
+        <option>Kandla</option>
+        <option>Mangaluru</option>
+        <option>Mumbai</option>
+        <option>Port Blair</option>
+        <option>Tuticorin</option>
+        <option>Vishakapatnam</option>
+        
+       </select>
+      <br><br><br><input type="submit" value="Order" style="font-size:3vh ; color: black; font-family:'Patua One', cursive;">
+      <input type="button" value="Print" style="font-size:3vh ; color: black; font-family:'Patua One', cursive; margin-left: 200px;">
+    </div>
+
+    <input type="radio" id="tabsilver" name="mytabs">
+    <label for="tabsilver">Track Cargo</label>
+    <div class="tab">
+      <h2 style="font-size:4vh ;">Track  Cargo</h2><br>
+      <section class="nu">
+     <button class="btn btn-secondary"><a href="https://craftsman-hundred-sister-hyk5.herokuapp.com/"> Track Cargo</a></button><br>
+    </div>
+    
+    <input type="radio" id="tabdi" name="mytabs">
+    <label for="tabdi"><a href="/login">Logout</a></label>
+    
+
+
+    
+  </div>
+</form>    
+<form id="myfrm" method="post">
+    
+    </form>
+<script>
+
+var Quantit = 10;
+var qty=0;
+
+var total_amount=0;
+  document.getElementById("name").addEventListener("keyup",function(){
+    // name = document.getElementById("name").value;
+    
+    document.getElementById("name1").innerHTML=this.value;
+});
+
+document.getElementById("quantity").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("qty").innerHTML=this.value;
+});
+
+
+document.getElementById("goods").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("tg").innerHTML=this.value;
+});
+document.getElementById("loc").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("cl").innerHTML=this.value;
+});
+document.getElementById("add1").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("add").innerHTML=this.value;
+});
+document.getElementById("ph").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("sph").innerHTML=this.value;
+});
+document.getElementById("nam").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("name2").innerHTML=this.value;
+});
+document.getElementById("add2").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("addr").innerHTML=this.value;
+});
+document.getElementById("email").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("email1").innerHTML=this.value;
+});
+document.getElementById("mob").addEventListener("keyup",function(){
+    // name = document.getElementById("qty").value;
+    
+    document.getElementById("mob1").innerHTML=this.value;
+});
+document.getElementById("quantity").addEventListener("keyup",function(){
+if(this.value==""||this.value==0){
+    
+    qty=0;
+    showBill();
+}else{
+    qty=this.value;
+    
+    showBill();
+
+}
+});
+function showBill(val){
+   var fnum=document.getElementById("tot_amt").value;
+   var snum=document.getElementById("to_amt").value;
+   var tot=parseInt(fnum) + parseInt(snum);
+    document.getElementById("amount").innerHTML = tot+Quantit*qty; 
+    //document.getElementById("book").innerHTML = tot+Quantit*qty; // total amount
+}
+function calculateAmt(val){
+     var price=val*100;
+    var divobj=document.getElementById('tot_amt');
+    divobj.value=price;
+}
+function calAmt(val){
+     var pric=val*100;
+    var divob=document.getElementById('to_amt');
+    divob.value=pric;
+}
+
+function printContent(el){
+    var restorepage =document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML =printcontent;
+    window.print();
+    document.body.innerHTML =restorepage;
+    window.close();
+}
+</script>
+</body>
+</html>
+

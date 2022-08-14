@@ -1,0 +1,120 @@
+body {
+    background: #ccc;
+    font-family: 'Patua One', cursive;
+    background-image: url(./ocean1.jpg);
+}
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 25px;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding: 25px;
+    background: #e2e2e2;
+    font-weight: bold;
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none; background: linear-gradient(45deg, white 0%, skyblue);
+}
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: #fff;
+}
+a{
+    text-decoration: none;
+}
+b{
+    padding: 3vh;
+    font-size: 2vh;
+    width: 100px;
+    display: inline-block;
+    font-family: 'Patua One', cursive;
+    
+}
+input[type=text]{
+    width: 300px;
+    font-size: 3vh;
+    font-weight:bold;
+    align-content: center;
+    display: inline-block;
+} 
+input[type=submit]{
+    font-weight: bold;
+    margin-left: 3vh;
+}
+input[type=submit]:hover{
+background: lightsalmon;
+}
+h2{
+    padding-left: 3vh;
+    color: navy;
+    font-size: 2vh;
+}
+h3{
+    padding-left: 3vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.sa{
+  display: inline-block;
+  width: 310px;
+}
+.sb{
+  margin-left: 12px;
+}
+.nu .btn {
+  
+  float: right;
+  margin: 6px;
+  font-size: inherit;
+  line-height: 1.42;
+  padding: 0.8em 2.5em;
+  font-weight: normal;
+  border-width: 3px;
+  border-style: solid;
+  background: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: "Booster Next FY", "Avenir Next", Avenir, sans-serif;
+  user-select: none;
+  vertical-align: bottom;
+  transition: background-color 0.2s, color 0.2s, padding 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-radius 0.2s;
+}
+.nu .btn.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.nu .btn.btn-disabled:active {
+  opacity: 0.6;
+}
+.nu .btn-secondary {
+  color: #0B44EF;
+  border-color: #0B44EF;
+}
+.nu .btn-secondary:hover {
+  background-color: #0B44EF;
+  color: #E6EAEF;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  border-radius: 0.4em;
+}
+.nu .btn-secondary:active {
+  background-color: #0a40e0;
+  border-color: #0a40e0;
+}

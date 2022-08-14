@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Tabs</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Monoton&family=Patua+One&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Patua+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Patua+One&family=Rampart+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form class="adm" action="/admin" method="POST">
+    <input type="hidden" name="_id" value="{{cargo._id}}">
+  <div class="mytabs">
+    <input type="radio" id="tabfree" name="mytabs" checked="checked" >
+    <label for="tabfree" >Add Warehouse</label>
+    <div class="tab">
+      
+      <h2 style="font-size: 4vh;font-family: 'Patua One', cursive;">Warehouse</h2>
+      
+      <b>ID: </b>
+       <input type="text" name="Id"><br>
+       
+       <b> Name:</b>
+       <input type="text" name="Name"><br>
+       <b style="padding-top: 2vh;">Cargo Types:</b>
+       <select class="sa" name="CType" style="font-family: 'Patua One', cursive; font-size: 3vh;">
+        <option>Dry Storage Container</option>
+        <option>Flat Rack Container</option>
+        <option>Open Top Container</option>
+        <option>Open Side Storage Container</option>
+        <option>Refrigerated ISO Container</option>
+        <option>ISO Tanks</option>
+        <option>Half Height Container</option>
+        <option>Special Purpose Container</option>
+        <option>Tuticorin</option>
+        <option>Vishakapatnam</option>
+        
+       </select></br>
+       <b style="padding-top: 2vh;">Dimensions:</b>
+       <select class="sa" name="Dimension" style="font-family: 'Patua One', cursive; font-size: 3vh;">
+        <option>10-Feet</option>
+        <option>20-Feet</option>
+        <option>40-Feet</option></select></br>
+        <b> No. of Containers:</b>
+       <input type="text" name="No_of_container" ></br>
+       <b> Quantity:</b>
+       <input type="text" name="Quantity"><br>
+       <b> Price:</b>
+       <input type="text" name="Price"><br>
+       <b style="padding-top: 2vh;">Warehouse Places</b>
+       <select class="sa" name="WarePlace" style="font-family: 'Patua One', cursive; font-size: 3vh;">
+        <option>Chennai</option>
+        <option>Coimbatore</option>
+        <option>Goa</option>
+        <option>Kochi</option>
+        <option>Kandla</option>
+        <option>Mangaluru</option>
+        <option>Mumbai</option>
+        <option>Port Blair</option>
+        <option>Tuticorin</option>
+        <option>Vishakapatnam</option>
+        
+       </select>
+      <br><br><br><input type="submit" value="Submit" style="font-size:3vh ; color: black; font-family:'Patua One', cursive;padding-left: 2vh;padding-right: 3vh;">
+    </div>
+
+    <input type="radio" id="tabsilver" name="mytabs">
+    <label for="tabsilver"><a href="/list"> View </a></label>
+    <div class="tab">
+      <h2 style="margin-left: 25vh; font-size: 4vh;"></h2>
+     
+    </div>
+
+    <input type="radio" id="tabgold" name="mytabs">
+    <label for="tabgold">Bill</label>
+    <div class="tab">
+      <section class="nu">
+       
+      <h2 style="font-size: 4vh;">Cargo Bill</h2>
+      <button class="btn btn-secondary" style="float: left;"><a href="https://billingstats98760.herokuapp.com/"> Billing Visualization</a></button><br>
+    </div>
+    <input type="radio" id="tabd" name="mytabs">
+    <label for="tabd"><a href="https://warehouse123345.herokuapp.com/">Warehouse Visualization</a></label>
+    <div class="tab">
+      <section class="nu">
+       <button class="btn btn-secondary"><a href="https://warehouse123345.herokuapp.com/"> Warehouse Visualization</a></button><br>
+    </div>
+    <input type="radio" id="tabdi" name="mytabs">
+    <label for="tabdi"><a href="/login">Logout</a></label>
+    <div class="tab">
+      <section class="nu">
+       <button class="btn btn-secondary"><a href="https://warehouse123345.herokuapp.com/"> Warehouse Visualization</a></button><br>
+    </div>
+    
+
+  </div>
+  
+</body>
+</html>
+
